@@ -32,7 +32,7 @@ fun KontakApp(
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = { TopAppBar(scrollBehavior = scrollBehavior) }
+        topBar = { TopAppBar(title = "Home", canNavigateBack = false) }
     ) {
         Surface(
             modifier = Modifier
