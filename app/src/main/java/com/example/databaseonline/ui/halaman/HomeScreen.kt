@@ -16,4 +16,15 @@ object DetinasiHome : DestinasiNavigasi{
 
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreen(
+    navigateToItemEntry : () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick : (Int) -> Unit = {},
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+){
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 
+
+}
