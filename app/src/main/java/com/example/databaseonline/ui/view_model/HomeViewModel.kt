@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.databaseonline.modeldata.Kontak
 import com.example.databaseonline.repositori.KontakRepositori
 import kotlinx.coroutines.launch
@@ -36,4 +37,16 @@ class HomeViewModel (private val kontakRepositori: KontakRepositori) : ViewModel
             }
         }
     }
+    fun deleteKontak(id: Int){
+        viewModelScope.launch{
+            try {
+                kontakRepositori..deleteKontak(id)
+            }catch (e:IOException){
+                KontakUIState.Error
+            }catch (e:HttpException){
+                KontakUIState.Error
+            }
+        }
+    }
 }
+
