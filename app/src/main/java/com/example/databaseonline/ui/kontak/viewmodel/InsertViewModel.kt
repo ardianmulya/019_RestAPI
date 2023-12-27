@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.example.databaseonline.modeldata.Kontak
 import com.example.databaseonline.repositori.KontakRepositori
 
 class InsertViewModel (private val kontakRepositori: KontakRepositori):ViewModel(){
@@ -21,4 +22,11 @@ data class InsertUiEvent(
     val nama : String = "",
     val email: String = "",
     val nohp: String = ""
+)
+
+fun Kontak.toInserUiEvent(): InsertUiEvent = InsertUiEvent(
+    id = id,
+    nama = nama,
+    email = alamat,
+    nohp = telpon
 )
