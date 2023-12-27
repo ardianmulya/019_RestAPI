@@ -19,7 +19,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.databaseonline.ui.PenyediaViewModel
 import com.example.databaseonline.ui.TopAppBar
 
-object DetinasiHome : DestinasiNavigasi {
+object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
     override val titleres = "Kontak"
 
@@ -39,7 +39,7 @@ fun HomeScreen(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBar(
-                title = DetinasiHome.titleres,
+                title = DestinasiHome.titleres,
                 canNavigateBack = false,
                 scrollBehavior = scrollBehavior
             )
